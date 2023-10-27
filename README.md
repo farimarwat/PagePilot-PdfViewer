@@ -8,7 +8,7 @@ A pdfviewer for android jetpack compose with search feature
 2. Zooming
 3. Search word in page
 4. Share either file or page
-5. Smooth scroller (horizontal/vertical)
+5. Smooth scrolling (horizontal/vertical)
 6. Remember last visited page
 
 ## Implementation
