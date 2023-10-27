@@ -15,7 +15,7 @@ Below are steps to implement in your android studio compose project
 Place below in repository{} block of settings.gradle.kts
 ```
 maven {
-            url = uri("https://repo.itextsupport.com/android")
+     url = uri("https://repo.itextsupport.com/android")
 }
 ```
 ### step 2 
