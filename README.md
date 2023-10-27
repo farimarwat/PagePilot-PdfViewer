@@ -1,6 +1,8 @@
 # PagePilot-PdfViewer
 A pdfviewer for android jetpack compose with search feature
 
+<img src="logo.png" alt="pdfviewer"/>
+
 ## Main Features
 1. Single line of code
 2. Zooming
