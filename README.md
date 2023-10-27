@@ -140,3 +140,9 @@ data class PdfDetails(
     val created:String?
 )
 ```
+
+### Important
+I have no time to test it thoroughly. So do not panic if some issue occures. Kindly open an issue and I will try my best to solve it.
+
+### Buy me a cup of Tea
+<a href="https://www.patreon.com/farimarwat">Click Here </a>
