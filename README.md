@@ -40,3 +40,30 @@ fun PdfView(
     OnError: (error: String) -> Unit = {}
 )
 ```
+
+### Bonus
+To list pdf files, I have provided a utility to get all pdf files:
+```
+ val types = arrayOf("application/pdf") // type of file to list. here I only want to list pdf files
+ val files = PagePilotUtils.listFiles(context,types)
+```
+This will return a list of PdfFile object data class which is already available in the package:
+```
+data class PdfFile(
+    val id:Long,
+    val path:String,
+    val uri:String,
+    val name:String,
+    val size:Long,
+    val datetime:Long,
+    val type:String
+)
+```
+### Important
+To  list pdf files, you have to use:
+```
+<uses-permission
+        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+```
+**Note:Sample project is also available in the repo. just clone it**
