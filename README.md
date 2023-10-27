@@ -18,7 +18,8 @@ maven {
             url = uri("https://repo.itextsupport.com/android")
 }
 ```
-## Dependency
+### step 2 
+Place it in dependencies{} block of app level gradle file
 ```
 implementation("io.github.farimarwat:pagepilot-pdfviewer:1.0")
 ```
