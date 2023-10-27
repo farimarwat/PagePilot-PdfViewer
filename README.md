@@ -25,6 +25,11 @@ implementation("io.github.farimarwat:pagepilot-pdfviewer:1.1")
 ```
 
 ## Usage
+There are two ways to use PagePilot Pdf Viewer. 
+1. Already provided Templete which needs just single line of code.
+2. Customize by your self
+
+### Template
 ```
 val uri:Uri = ...
  PdfView(fileuri = uri)
@@ -67,3 +72,71 @@ To  list pdf files, you have to use:
         tools:ignore="ScopedStorage" />
 ```
 **Note:Sample project is also available in the repo. just clone it**
+
+### Customizing
+To use PagePilot PdfViewer in customize way:
+
+### Get Main Object
+First get the main object and then use it methods:
+```
+val mPdfTool = PdfViewTool.Builder(context)
+            .build()
+```
+
+### Open Document
+```
+ mPdfTool?.let { tool ->
+           if(tool.isProtected(uri)){ //this will check if file is protected
+               tool.openDocument(uri, password){ error ->
+                       //log error here
+                   }
+           } else {
+               tool.openDocument(uri){ error ->
+                    //log error here
+               }
+           }
+            mPageCount = tool.getPageCount()
+            Log.e(TAG_PDFTOOL,"PageCount: $mPageCount")
+        }
+```
+
+### Close Document
+It is necessary to close the document onstop of the activity
+```
+ mPdfTool?.closeDocument()
+```
+
+### Get page as bitmap
+```
+ mPdfTool?.getPageBitmap(
+     scaleFactor = scaleFactor, //this is to get scaled image. e.g. 1.0 for same size and 1.5 to upscale
+     index = index, //get the page e.g. to get the first page = 0
+     search = search // if you want to search a word the provide it else provide empty string = ""
+)
+```
+
+### Get page size in rectangle
+```
+mPdfTool?.getPageSize(index)
+```
+
+### Get total pages count
+```
+mPdfTool?.getPageCount()
+```
+
+### Get pdf details
+```
+mPdfTool?.getDetails()
+```
+This will return object of PdfDetails class
+```
+data class PdfDetails(
+    val author:String?,
+    val creator:String?,
+    val title:String?,
+    val keywords:String?,
+    val subject:String?,
+    val created:String?
+)
+```
