@@ -30,6 +30,7 @@ val uri:Uri = ...
  PdfView(fileuri = uri)
 ```
 ### Other properties
+```
 fun PdfView(
     fileuri: Uri,
     password: String? = null, //password if any
@@ -38,3 +39,4 @@ fun PdfView(
     counterbackgroundcolor: Color = Color.Gray, //page counter background color
     OnError: (error: String) -> Unit = {}
 )
+```
