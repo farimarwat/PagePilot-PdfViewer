@@ -21,5 +21,20 @@ maven {
 ### step 2 
 Place it in dependencies{} block of app level gradle file
 ```
-implementation("io.github.farimarwat:pagepilot-pdfviewer:1.0")
+implementation("io.github.farimarwat:pagepilot-pdfviewer:1.1")
 ```
+
+## Usage
+```
+val uri:Uri = ...
+ PdfView(fileuri = uri)
+```
+### Other properties
+fun PdfView(
+    fileuri: Uri,
+    password: String? = null, //password if any
+    topbarcolor: Color = Color.White, //container color of top bar
+    iconscolor: Color = Color.Black, // icons color used in the view e.g. icons in top bar
+    counterbackgroundcolor: Color = Color.Gray, //page counter background color
+    OnError: (error: String) -> Unit = {}
+)
